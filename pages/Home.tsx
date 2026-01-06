@@ -46,12 +46,23 @@ export const Home: React.FC = () => {
                 </div>
                 <div className="relative">
                     <div className="relative rounded-card overflow-hidden shadow-2xl bg-brand-mist aspect-[4/3] group">
+                         {/* 
+                            NOTE: To use your specific photo:
+                            1. Rename your image file to "t98-hero.jpg"
+                            2. Place it in the root "public" folder of your project
+                            The code below will try to load that file first.
+                         */}
                          <img 
-                            src="https://picsum.photos/800/600?grayscale" 
+                            src="/t98-hero.jpg" 
+                            onError={(e) => {
+                                const target = e.currentTarget;
+                                target.onerror = null; // Prevent loop
+                                target.src = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070";
+                            }}
                             alt="Dr. Tran treating a patient" 
-                            className="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:scale-105 transition-transform duration-700"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                         <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 to-brand-orange/10"></div>
+                         <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 to-brand-orange/10 pointer-events-none"></div>
                     </div>
                     {/* Decorative Circle */}
                     <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-brand-orange rounded-full opacity-20 blur-2xl"></div>
