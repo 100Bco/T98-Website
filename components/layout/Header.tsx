@@ -6,6 +6,7 @@ import { Button } from '../ui/Button';
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === '/';
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -19,14 +20,21 @@ export const Header: React.FC = () => {
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  const headerClasses = isHome
+    ? 'fixed top-0 w-full z-50 bg-transparent border-transparent'
+    : 'fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100';
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <header className={headerClasses}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo T98 */}
-          <Link to="/" className="flex flex-col leading-none" onClick={closeMenu}>
-             <span className="font-display font-extrabold text-3xl tracking-tight text-brand-blue">T98</span>
-             <span className="font-display font-bold text-sm text-brand-orange">Rehab & Chiropractic</span>
+          <Link to="/" className="flex items-center" onClick={closeMenu}>
+            <img
+              src="/Logo T98.png"
+              alt="T98 Rehab & Chiropractic"
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -35,8 +43,14 @@ export const Header: React.FC = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-brand-blue ${
-                  location.pathname === link.path ? 'text-brand-blue font-bold' : 'text-brand-grey'
+                className={`text-sm font-medium transition-colors ${
+                  isHome
+                    ? location.pathname === link.path
+                      ? 'text-white font-bold'
+                      : 'text-white/80 hover:text-white'
+                    : location.pathname === link.path
+                      ? 'text-brand-blue font-bold'
+                      : 'text-brand-grey hover:text-brand-blue'
                 }`}
               >
                 {link.name}
@@ -46,18 +60,23 @@ export const Header: React.FC = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:5129062580" className="flex items-center text-brand-navy font-bold text-sm">
+            <a
+              href="tel:5129062580"
+              className={`flex items-center font-bold text-sm ${isHome ? 'text-white' : 'text-brand-navy'}`}
+            >
                 <Phone className="w-4 h-4 mr-2" />
                 (512) 906-2580
             </a>
             <Link to="/contact">
-                <Button>Book Now</Button>
+                <Button variant={isHome ? 'white' : 'primary'} className={isHome ? 'shadow-lg' : ''}>
+                  Book Now
+                </Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-brand-navy"
+            className={`md:hidden ${isHome ? 'text-white' : 'text-brand-navy'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
