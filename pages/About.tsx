@@ -28,7 +28,7 @@ export const About: React.FC = () => {
              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                  <div className="space-y-4">
                      <div className="h-80 bg-gray-200 rounded-card overflow-hidden">
-                         <img src="https://picsum.photos/600/600?random=1" alt="Dr. Thomas Tran" className="w-full h-full object-cover" />
+                         <img src="Dr.Thomas.jpg" alt="Dr. Thomas Tran" className="w-full h-full object-cover" />
                      </div>
                      <h3 className="text-2xl font-bold text-brand-navy">Dr. Thomas Tran, DC</h3>
                      <p className="text-brand-orange font-bold text-sm uppercase tracking-wide">Chiropractor, Austin (North)</p>
