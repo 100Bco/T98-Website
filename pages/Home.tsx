@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../components/ui/Button';
+// Lưu ý: Đảm bảo import đúng đường dẫn component
+import { Button } from '../components/ui/Button'; 
 import { Card } from '../components/ui/Card';
 import { DuotoneIcon } from '../components/ui/DuotoneIcon';
-import { Activity, Zap, CheckCircle, ArrowRight, ShieldCheck, UserCheck } from 'lucide-react';
+import { Activity, CheckCircle, ArrowRight, ShieldCheck, UserCheck } from 'lucide-react';
 
 const conditions = [
   { title: 'Low Back Pain', path: '/conditions/low-back-pain' },
@@ -68,7 +69,7 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {conditions.map((item) => (
                     <Link key={item.path} to={item.path}>
-                        <Card className="h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue">
+                        <Card className="h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue group">
                              <h3 className="font-display font-bold text-lg text-brand-navy">{item.title}</h3>
                              <ArrowRight className="mt-4 text-brand-orange w-5 h-5 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all" />
                         </Card>
@@ -87,21 +88,21 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card className="text-center">
+                <Card className="text-center p-6">
                     <div className="mb-6 flex justify-center">
                         <DuotoneIcon icon={ShieldCheck} size={48} />
                     </div>
                     <h3 className="text-xl font-display font-bold text-brand-navy mb-3">1. Recover</h3>
                     <p className="text-brand-grey">Calm pain & protect irritated tissues through gentle care.</p>
                 </Card>
-                <Card className="text-center">
+                <Card className="text-center p-6">
                     <div className="mb-6 flex justify-center">
                          <DuotoneIcon icon={Activity} size={48} />
                     </div>
                     <h3 className="text-xl font-display font-bold text-brand-navy mb-3">2. Reactivate</h3>
                     <p className="text-brand-grey">Guided rehab to restore strength, motion, and confidence.</p>
                 </Card>
-                <Card className="text-center">
+                <Card className="text-center p-6">
                     <div className="mb-6 flex justify-center">
                         <DuotoneIcon icon={CheckCircle} size={48} />
                     </div>
@@ -110,7 +111,7 @@ export const Home: React.FC = () => {
                 </Card>
             </div>
 
-            <div className="mt-12 text-center max-w-2xl mx-auto bg-white p-6 rounded-card border border-brand-blue/20">
+            <div className="mt-12 text-center max-w-2xl mx-auto bg-white p-6 rounded-card border border-brand-blue/20 shadow-sm">
                 <p className="text-brand-navy font-medium text-lg">
                     "Many patients notice meaningful improvement in <span className="text-brand-orange font-bold">3–5 visits</span> for typical, uncomplicated cases."
                 </p>
