@@ -19,25 +19,15 @@ const conditions = [
 export const Home: React.FC = () => {
   return (
     <>
-      {/* --- HERO SECTION (FULL SCREEN) --- */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 text-center text-white">
-        
-        {/* Ảnh nền */}
-        <div className="absolute inset-0 z-0">
-            <img
-            src="/hero-banner.jpg"
-            onError={(e) => {
-                // Tự động load ảnh online nếu file trong máy chưa có
-                e.currentTarget.src = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
-            }}
-            alt="Chiropractic Hero"
-            className="w-full h-full object-cover"
-            />
-            {/* Lớp phủ đen */}
-            <div className="absolute inset-0 bg-black/50"></div>
-        </div>
-
-        {/* Nội dung text */}
+        <img
+          src="/hero-banner.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tightest leading-tight">
             Restore Your Motion. Reclaim Your Life.
@@ -47,12 +37,12 @@ export const Home: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
             <Link to="/contact">
-              <Button className="w-full sm:w-auto shadow-lg bg-brand-orange text-white border-none hover:bg-orange-600">Book Now</Button>
+              <Button className="w-full sm:w-auto shadow-lg">Book Now</Button>
             </Link>
             <Link to="/auto-injury">
               <Button
                 variant="secondary"
-                className="w-full sm:w-auto bg-transparent text-white border-2 border-white hover:bg-white hover:text-brand-navy"
+                className="w-full sm:w-auto bg-white/10 text-white border-white/70 hover:bg-white/20"
               >
                 Free Injury Consult
               </Button>
@@ -72,7 +62,7 @@ export const Home: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">What hurts? (Start here)</h2>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">WHAT HURTS?</h2>
                 <p className="text-brand-grey text-lg">Select your symptom to see how we help.</p>
             </div>
             

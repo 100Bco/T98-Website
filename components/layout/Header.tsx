@@ -31,15 +31,13 @@ export const Header: React.FC = () => {
     <header className={headerClasses}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          
-          {/* Logo T98 (Dạng chữ) */}
-          <Link to="/" className="flex flex-col leading-none group" onClick={closeMenu}>
-             <span className={`font-display font-extrabold text-3xl tracking-tight transition-colors ${isHome ? 'text-white group-hover:text-gray-200' : 'text-brand-blue'}`}>
-               T98
-             </span>
-             <span className={`font-display font-bold text-sm transition-colors ${isHome ? 'text-white/80 group-hover:text-white' : 'text-brand-orange'}`}>
-               Rehab & Chiropractic
-             </span>
+          {/* Logo T98 */}
+          <Link to="/" className="flex items-center" onClick={closeMenu}>
+            <img
+              src="/Logo T98.png"
+              alt="T98 Rehab & Chiropractic"
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
