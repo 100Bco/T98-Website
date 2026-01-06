@@ -36,7 +36,7 @@ export const AutoInjury: React.FC = () => {
               </div>
               <div className="relative">
                  <img 
-                    src="/public/hero-banner.jpg"  
+                    src="t98-hero.jpg"  
                     alt="Dr. Tran treating a patient"  
                     className="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:scale-105 transition-transform duration-700"
                  />
