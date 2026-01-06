@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
     <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+          {/* Logo T98 */}
           <Link to="/" className="flex flex-col leading-none" onClick={closeMenu}>
              <span className="font-display font-extrabold text-3xl tracking-tight text-brand-blue">T98</span>
              <span className="font-display font-bold text-sm text-brand-orange">Rehab & Chiropractic</span>
