@@ -36,9 +36,9 @@ export const AutoInjury: React.FC = () => {
               </div>
               <div className="relative">
                  <img 
-                    src="https://picsum.photos/800/600?grayscale" 
-                    alt="Professional Clinical Exam" 
-                    className="rounded-card shadow-2xl opacity-90 border-4 border-white/10"
+                    src="/public/hero-banner.jpg"  
+                    alt="Dr. Tran treating a patient"  
+                    className="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:scale-105 transition-transform duration-700"
                  />
                  <div className="absolute -bottom-6 -right-6 bg-brand-orange text-white p-6 rounded-card shadow-glow-orange hidden md:block">
                     <p className="font-bold text-lg">Don't wait.</p>
