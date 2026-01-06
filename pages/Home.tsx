@@ -18,12 +18,16 @@ const conditions = [
 export const Home: React.FC = () => {
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section - Đã chọn giao diện Full Màn Hình mới */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center pt-24 pb-16 text-center text-white"
+        // Lưu ý: Đảm bảo bạn có file ảnh hero-banner.jpg trong thư mục public, 
+        // hoặc đổi đường dẫn này thành link ảnh online
         style={{ backgroundImage: "url('/hero-banner.jpg')" }}
       >
+        {/* Lớp phủ đen mờ giúp đọc chữ rõ hơn */}
         <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
+        
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tightest leading-tight">
             Restore Your Motion. Reclaim Your Life.
@@ -33,12 +37,12 @@ export const Home: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
             <Link to="/contact">
-              <Button className="w-full sm:w-auto shadow-lg">Book Now</Button>
+              <Button className="w-full sm:w-auto shadow-lg bg-brand-orange text-white border-none hover:bg-orange-600">Book Now</Button>
             </Link>
             <Link to="/auto-injury">
               <Button
                 variant="secondary"
-                className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white/10"
+                className="w-full sm:w-auto bg-transparent text-white border-2 border-white hover:bg-white hover:text-brand-navy"
               >
                 Free Injury Consult
               </Button>
@@ -65,7 +69,7 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {conditions.map((item) => (
                     <Link key={item.path} to={item.path}>
-                        <Card className="h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue">
+                        <Card className="h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue group">
                              <h3 className="font-display font-bold text-lg text-brand-navy">{item.title}</h3>
                              <ArrowRight className="mt-4 text-brand-orange w-5 h-5 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all" />
                         </Card>
