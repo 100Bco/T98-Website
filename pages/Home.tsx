@@ -19,44 +19,35 @@ export const Home: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-10 pb-16 md:pt-20 md:pb-24 lg:pt-32">
-        <div className="absolute right-0 top-0 -z-10 w-1/2 h-full bg-gradient-to-l from-brand-orange/10 to-transparent rounded-full opacity-60 blur-3xl transform translate-x-1/3"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="text-left space-y-6">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-brand-navy tracking-tightest leading-tight">
-                        Chiropractor & Rehab in Austin and Pflugerville
-                    </h1>
-                    <p className="text-lg md:text-xl text-brand-grey leading-relaxed max-w-lg">
-                        <strong>Pain relief that lasts—without the runaround.</strong>
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <Link to="/contact">
-                            <Button className="w-full sm:w-auto">Book Now</Button>
-                        </Link>
-                        <Link to="/auto-injury">
-                             <Button variant="secondary" className="w-full sm:w-auto">Free Injury Consult</Button>
-                        </Link>
-                    </div>
-                    <p className="text-sm text-brand-grey pt-2 flex items-center">
-                        <span className="w-2 h-2 bg-brand-green rounded-full mr-2"></span>
-                        Accepting New Patients & Auto Injury Cases
-                    </p>
-                </div>
-                <div className="relative">
-                    <div className="relative rounded-card overflow-hidden shadow-2xl bg-brand-mist aspect-[4/3] group">
-                         <img 
-                            src="https://picsum.photos/800/600?grayscale" 
-                            alt="Dr. Tran treating a patient" 
-                            className="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:scale-105 transition-transform duration-700"
-                        />
-                         <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 to-brand-orange/10"></div>
-                    </div>
-                    {/* Decorative Circle */}
-                    <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-brand-orange rounded-full opacity-20 blur-2xl"></div>
-                </div>
-            </div>
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center pt-24 pb-16 text-center text-white"
+        style={{ backgroundImage: "url('/hero-banner.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tightest leading-tight">
+            Restore Your Motion. Reclaim Your Life.
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+            Pain relief that lasts—without the runaround.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+            <Link to="/contact">
+              <Button className="w-full sm:w-auto shadow-lg">Book Now</Button>
+            </Link>
+            <Link to="/auto-injury">
+              <Button
+                variant="secondary"
+                className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white/10"
+              >
+                Free Injury Consult
+              </Button>
+            </Link>
+          </div>
+          <p className="text-sm text-white/80 pt-2 flex items-center justify-center">
+            <span className="w-2 h-2 bg-brand-green rounded-full mr-2"></span>
+            Accepting New Patients & Auto Injury Cases
+          </p>
         </div>
       </section>
 
