@@ -45,11 +45,11 @@ export const Home: React.FC = () => {
                     </p>
                 </div>
                 <div className="relative">
-                    <div className="relative rounded-card overflow-hidden shadow-2xl bg-brand-mist aspect-[4/3] group">
+                    <div className="relative rounded-card overflow-hidden shadow-2xl bg-brand-mist aspect-[5504/3072] group">
                          <img 
-                            src="https://picsum.photos/800/600?grayscale" 
-                            alt="Dr. Tran treating a patient" 
-                            className="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:scale-105 transition-transform duration-700"
+                            src="/hero-banner.jpg" 
+                            alt="Chiropractor speaking with a patient" 
+                            className="w-full h-full object-contain mix-blend-overlay opacity-90 group-hover:scale-105 transition-transform duration-700"
                         />
                          <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 to-brand-orange/10"></div>
                     </div>
