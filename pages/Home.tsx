@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 text-center text-white">
         <img
-          src="/hero-banner.jpg"
+          src="/t98-hero.jpg"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
