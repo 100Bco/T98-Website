@@ -9,7 +9,7 @@ export const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-display font-extrabold text-brand-navy mb-4">About T98</h1>
-            <p className="text-xl text-brand-grey">We help busy people get out of pain—and stay that way.</p>
+            <p className="text-xl text-brand-grey">Specializing in Auto Accident Injury & Pain Relief Rehabilitation.</p>
          </div>
 
          <div className="mb-20">
