@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// Lưu ý: Đảm bảo import đúng đường dẫn component
 import { Button } from '../components/ui/Button'; 
 import { Card } from '../components/ui/Card';
 import { DuotoneIcon } from '../components/ui/DuotoneIcon';
-import { Activity, CheckCircle, ArrowRight, ShieldCheck, UserCheck } from 'lucide-react';
+// Component Review mới
+import { GoogleReviews } from '../components/ui/GoogleReviews';
+import { Activity, CheckCircle, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const conditions = [
   { title: 'Low Back Pain', path: '/conditions/low-back-pain' },
@@ -26,6 +27,12 @@ export const Home: React.FC = () => {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
+          onError={(e) => {
+              const target = e.currentTarget;
+              target.onerror = null; 
+              // Fallback image nếu ảnh gốc lỗi
+              target.src = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070";
+          }}
         />
         <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
@@ -124,8 +131,12 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
+                     {/* Đảm bảo file ảnh nằm trong thư mục public và tên là 'why choose.jpg' */}
                      <img 
-                        src="why choose.jpg" 
+                        src="/why choose.jpg" 
+                        onError={(e) => {
+                            e.currentTarget.src = "https://picsum.photos/800/800";
+                        }}
                         alt="Clinic interior" 
                         className="rounded-card shadow-lg object-cover w-full h-96"
                     />
@@ -156,24 +167,13 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Real Outcomes */}
+      {/* Real Outcomes - Đã thay thế bằng GoogleReviews */}
       <section className="py-20 bg-brand-navy text-white">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-display font-bold text-center mb-12">Real outcomes</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                    "I could sit through work again after 3 visits.",
-                    "My neck rotation came back within two weeks.",
-                    "They handled the claim paperwork—huge relief."
-                ].map((quote, i) => (
-                    <div key={i} className="bg-white/10 backdrop-blur-sm p-8 rounded-card border border-white/20">
-                        <p className="text-lg italic font-medium">“{quote}”</p>
-                        <div className="mt-4 flex items-center">
-                            <UserCheck className="w-5 h-5 text-brand-orange mr-2" />
-                            <span className="text-sm text-gray-300">Verified Patient</span>
-                        </div>
-                    </div>
-                ))}
+            <div className="max-w-5xl mx-auto">
+                {/* Component hiển thị review */}
+                <GoogleReviews />
             </div>
          </div>
       </section>
