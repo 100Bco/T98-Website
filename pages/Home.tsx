@@ -18,56 +18,40 @@ const conditions = [
 export const Home: React.FC = () => {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-10 pb-16 md:pt-20 md:pb-24 lg:pt-32">
-        <div className="absolute right-0 top-0 -z-10 w-1/2 h-full bg-gradient-to-l from-brand-orange/10 to-transparent rounded-full opacity-60 blur-3xl transform translate-x-1/3"></div>
+      {/* Hero Section - Đã chọn giao diện Full Màn Hình mới */}
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center pt-24 pb-16 text-center text-white"
+        // Lưu ý: Đảm bảo bạn có file ảnh hero-banner.jpg trong thư mục public, 
+        // hoặc đổi đường dẫn này thành link ảnh online
+        style={{ backgroundImage: "url('/hero-banner.jpg')" }}
+      >
+        {/* Lớp phủ đen mờ giúp đọc chữ rõ hơn */}
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="text-left space-y-6">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-brand-navy tracking-tightest leading-tight">
-                        Chiropractor & Rehab in Austin and Pflugerville
-                    </h1>
-                    <p className="text-lg md:text-xl text-brand-grey leading-relaxed max-w-lg">
-                        <strong>Pain relief that lasts—without the runaround.</strong>
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <Link to="/contact">
-                            <Button className="w-full sm:w-auto">Book Now</Button>
-                        </Link>
-                        <Link to="/auto-injury">
-                             <Button variant="secondary" className="w-full sm:w-auto">Free Injury Consult</Button>
-                        </Link>
-                    </div>
-                    <p className="text-sm text-brand-grey pt-2 flex items-center">
-                        <span className="w-2 h-2 bg-brand-green rounded-full mr-2"></span>
-                        Accepting New Patients & Auto Injury Cases
-                    </p>
-                </div>
-                <div className="relative">
-                    <div className="relative rounded-card overflow-hidden shadow-2xl bg-brand-mist aspect-[4/3] group">
-                         {/* 
-                            NOTE: To use your specific photo:
-                            1. Rename your image file to "t98-hero.jpg"
-                            2. Place it in the root "public" folder of your project
-                            The code below will try to load that file first.
-                         */}
-                         <img 
-                            src="/t98-hero.jpg" 
-                            onError={(e) => {
-                                const target = e.currentTarget;
-                                target.onerror = null; // Prevent loop
-                                target.src = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070";
-                            }}
-                            alt="Dr. Tran treating a patient" 
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                         <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 to-brand-orange/10 pointer-events-none"></div>
-                    </div>
-                    {/* Decorative Circle */}
-                    <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-brand-orange rounded-full opacity-20 blur-2xl"></div>
-                </div>
-            </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tightest leading-tight">
+            Restore Your Motion. Reclaim Your Life.
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+            Pain relief that lasts—without the runaround.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+            <Link to="/contact">
+              <Button className="w-full sm:w-auto shadow-lg bg-brand-orange text-white border-none hover:bg-orange-600">Book Now</Button>
+            </Link>
+            <Link to="/auto-injury">
+              <Button
+                variant="secondary"
+                className="w-full sm:w-auto bg-transparent text-white border-2 border-white hover:bg-white hover:text-brand-navy"
+              >
+                Free Injury Consult
+              </Button>
+            </Link>
+          </div>
+          <p className="text-sm text-white/80 pt-2 flex items-center justify-center">
+            <span className="w-2 h-2 bg-brand-green rounded-full mr-2"></span>
+            Accepting New Patients & Auto Injury Cases
+          </p>
         </div>
       </section>
 
@@ -85,7 +69,7 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {conditions.map((item) => (
                     <Link key={item.path} to={item.path}>
-                        <Card className="h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue">
+                        <Card className="h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue group">
                              <h3 className="font-display font-bold text-lg text-brand-navy">{item.title}</h3>
                              <ArrowRight className="mt-4 text-brand-orange w-5 h-5 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all" />
                         </Card>
