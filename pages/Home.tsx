@@ -125,7 +125,7 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                      <img 
-                        src="public/why choose.jpg" 
+                        src="why choose.jpg" 
                         alt="Clinic interior" 
                         className="rounded-card shadow-lg object-cover w-full h-96"
                     />
