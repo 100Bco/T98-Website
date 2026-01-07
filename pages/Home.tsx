@@ -242,27 +242,33 @@ export const Home: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">Locations</h2>
-            <p className="text-brand-grey text-lg">Austin (North) • Pflugerville</p>
-            <p className="text-brand-grey">Open late & Saturdays to fit your schedule.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">Our Locations</h2>
+            <p className="text-brand-grey text-lg">Austin • Pflugerville</p>
+            <p className="text-brand-orange font-bold">Call: (512) 614-2330</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="text-center">
-              <h3 className="text-xl font-display font-bold text-brand-navy mb-3">Austin (North)</h3>
-              <p className="text-brand-grey mb-2">(512) 906-2580</p>
-              <p className="text-brand-grey text-sm mb-4">123 Sample Rd, Austin, TX</p>
+              <h3 className="text-xl font-display font-bold text-brand-navy mb-3">Austin</h3>
+              <p className="text-brand-grey text-sm mb-2">1139 Braker Lane #101<br/>Austin, TX 78758</p>
+              <p className="text-brand-grey text-xs mb-4">
+                Mon, Wed, Fri: 8:30am – 1:00pm | 3:00pm - 6:30pm<br/>
+                Tue, Thu, Sat, Sun: Closed
+              </p>
               <Link to="/contact">
-                <Button variant="secondary" className="w-full">Call / Book Online</Button>
+                <Button variant="secondary" className="w-full">View Map & Book</Button>
               </Link>
             </Card>
 
             <Card className="text-center">
               <h3 className="text-xl font-display font-bold text-brand-navy mb-3">Pflugerville</h3>
-              <p className="text-brand-grey mb-2">(512) 252-1662</p>
-              <p className="text-brand-grey text-sm mb-4">456 Sample Ave, Pflugerville, TX</p>
+              <p className="text-brand-grey text-sm mb-2">201 N. Heatherwilde Blvd. #104<br/>Pflugerville, TX 78660</p>
+              <p className="text-brand-grey text-xs mb-4">
+                Tue, Thu: 8:30am – 1:00pm | 3:00pm – 6:30pm<br/>
+                Mon, Wed, Fri, Sat, Sun: Closed
+              </p>
               <Link to="/contact">
-                <Button variant="secondary" className="w-full">Call / Book Online</Button>
+                <Button variant="secondary" className="w-full">View Map & Book</Button>
               </Link>
             </Card>
           </div>

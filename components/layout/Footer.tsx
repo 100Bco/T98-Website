@@ -23,24 +23,33 @@ export const Footer: React.FC = () => {
             <h3 className="font-display font-bold text-lg mb-4">Locations</h3>
             <ul className="space-y-3 text-gray-300 text-sm">
               <li>
-                <strong className="text-white block">Austin (North)</strong>
-                123 Sample Rd<br/>
-                Austin, TX 78xxx
+                <strong className="text-white block">Austin</strong>
+                1139 Braker Lane #101<br/>
+                Austin, TX 78758
               </li>
               <li>
                 <strong className="text-white block">Pflugerville</strong>
-                456 Sample Ave<br/>
-                Pflugerville, TX 78xxx
+                201 N. Heatherwilde Blvd. #104<br/>
+                Pflugerville, TX 78660
               </li>
             </ul>
           </div>
 
           <div>
-             <h3 className="font-display font-bold text-lg mb-4">Hours</h3>
+             <h3 className="font-display font-bold text-lg mb-4">Contact</h3>
              <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex justify-between max-w-[150px]"><span>Mon-Fri</span> <span>8am - 6pm</span></li>
-                <li className="flex justify-between max-w-[150px]"><span>Sat</span> <span>9am - 1pm</span></li>
-                <li className="flex justify-between max-w-[150px]"><span>Sun</span> <span>Closed</span></li>
+                <li>
+                  <a href="tel:5126142330" className="hover:text-brand-orange">
+                    <strong className="text-white">Phone:</strong><br/>
+                    (512) 614-2330
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:support@t98rehab.com" className="hover:text-brand-orange">
+                    <strong className="text-white">Email:</strong><br/>
+                    support@t98rehab.com
+                  </a>
+                </li>
              </ul>
           </div>
 
