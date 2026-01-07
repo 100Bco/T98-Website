@@ -133,30 +133,52 @@ export const Home: React.FC = () => {
       </section>
 
       {/* What Hurts Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">WHAT HURTS?</h2>
                 <p className="text-brand-grey text-lg">Select your symptom to see how we help.</p>
             </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-                {conditions.map((item) => (
-                    <Link key={item.path} to={item.path} className="w-full max-w-sm">
+
+            {/* First row: 4 items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
+                {conditions.slice(0, 4).map((item) => (
+                    <Link key={item.path} to={item.path}>
                         <Card className={`h-full flex flex-col overflow-hidden hover:border-brand-blue relative group ${item.urgent ? 'border-brand-orange border-2' : ''}`}>
                              {item.urgent && (
                                <span className="absolute top-2 right-2 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded z-10">URGENT</span>
                              )}
-                             <div className="w-full h-48 overflow-hidden">
+                             <div className="w-full h-36 overflow-hidden">
                                <img
                                  src={item.image}
                                  alt={item.title}
                                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                />
                              </div>
-                             <div className="p-6 text-center flex flex-col items-center justify-center flex-grow">
-                               <h3 className="font-display font-bold text-lg text-brand-navy mb-3">{item.title}</h3>
-                               <ArrowRight className="text-brand-orange w-5 h-5" />
+                             <div className="p-4 text-center flex flex-col items-center justify-center flex-grow">
+                               <h3 className="font-display font-bold text-base text-brand-navy mb-2">{item.title}</h3>
+                               <ArrowRight className="text-brand-orange w-4 h-4" />
+                             </div>
+                        </Card>
+                    </Link>
+                ))}
+            </div>
+
+            {/* Second row: 3 items centered */}
+            <div className="flex flex-wrap justify-center gap-4">
+                {conditions.slice(4).map((item) => (
+                    <Link key={item.path} to={item.path} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.67rem)] lg:w-[calc(25%-0.75rem)]">
+                        <Card className="h-full flex flex-col overflow-hidden hover:border-brand-blue relative group">
+                             <div className="w-full h-36 overflow-hidden">
+                               <img
+                                 src={item.image}
+                                 alt={item.title}
+                                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                               />
+                             </div>
+                             <div className="p-4 text-center flex flex-col items-center justify-center flex-grow">
+                               <h3 className="font-display font-bold text-base text-brand-navy mb-2">{item.title}</h3>
+                               <ArrowRight className="text-brand-orange w-4 h-4" />
                              </div>
                         </Card>
                     </Link>
