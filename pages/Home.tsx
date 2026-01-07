@@ -49,13 +49,17 @@ export const Home: React.FC = () => {
                 Most auto injury exams cost $0 out-of-pocket.
               </p>
               
-              {/* Phần code đã sửa button */}
+              {/* --- Đã sửa link booking ở đây --- */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link to="/contact">
+                <a 
+                  href="https://api.leadconnectorhq.com/widget/bookings/t98rehabchiropractic_bookingmeeting" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   <Button className="w-full sm:w-auto px-6 py-3 bg-brand-orange text-white hover:brightness-110 border-0">
                     Schedule Appointment
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -263,9 +267,14 @@ export const Home: React.FC = () => {
                 loading="lazy"
                 allowFullScreen
               ></iframe>
-              <Link to="/contact">
+              {/* --- Đã sửa link booking ở đây (Austin) --- */}
+              <a 
+                href="https://api.leadconnectorhq.com/widget/bookings/t98rehabchiropractic_bookingmeeting" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Button variant="secondary" className="w-full">Book Appointment</Button>
-              </Link>
+              </a>
             </Card>
 
             <Card className="text-center">
@@ -282,9 +291,14 @@ export const Home: React.FC = () => {
                 loading="lazy"
                 allowFullScreen
               ></iframe>
-              <Link to="/contact">
+               {/* --- Đã sửa link booking ở đây (Pflugerville) --- */}
+              <a 
+                href="https://api.leadconnectorhq.com/widget/bookings/t98rehabchiropractic_bookingmeeting" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Button variant="secondary" className="w-full">Book Appointment</Button>
-              </Link>
+              </a>
             </Card>
           </div>
         </div>
