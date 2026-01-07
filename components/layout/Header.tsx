@@ -60,12 +60,11 @@ export const Header: React.FC = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={closeMenu}>
-            <img
-              src="/Logo T98.png"
-              alt="T98 Rehab & Chiropractic"
-              // Logo cũng thay đổi kích thước nhẹ khi cuộn để tạo hiệu ứng mượt mà
-              className={`w-auto transition-all duration-300 ${isScrolled ? 'h-10' : 'h-12'}`}
-            />
+             <img
+               src="/Logo T98.png"
+               alt="T98 Rehab & Chiropractic"
+               className="h-12 md:h-14 w-auto"
+             />
           </Link>
 
           {/* Desktop Nav */}

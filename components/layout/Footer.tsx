@@ -7,11 +7,13 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-1">
-             <img
-               src="/Logo T98.png"
-               alt="T98 Rehab & Chiropractic"
-               className="h-14 w-auto mb-4"
-             />
+             <div className="mb-4">
+                <img
+                  src="/Logo T98.png"
+                  alt="T98 Rehab & Chiropractic"
+                  className="h-12 w-auto"
+                />
+             </div>
              <p className="text-gray-300 text-sm leading-relaxed">
                Specializing in Auto Accident Injury & Pain Relief Rehabilitation.
              </p>

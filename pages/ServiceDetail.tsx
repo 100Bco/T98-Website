@@ -7,36 +7,44 @@ const serviceData: Record<string, any> = {
   'chiropractic-care': {
     title: 'Chiropractic Care',
     desc: 'Gentle, evidence-based adjustments to improve motion and reduce pain.',
+    subtitle: 'Perfect for Auto Injuries',
+    subtitleDesc: 'After a crash, your body is guarded and stiff. We use gentle mobilization (not just "cracking") to help you move again without fear.',
     content: {
-       expect: ['Focused exam & movement screen', 'Targeted adjustments (no “crack-everything” approach)', 'Mobility drills you can do at home'],
+       expect: ['Focused exam & movement screen', 'Targeted adjustments to restore Range of Motion', 'Pain-relief modalities'],
        helps: 'Low back and neck pain, headaches, sciatica, shoulder and mid-back tightness.',
-       note: 'Many uncomplicated cases improve meaningfully within 3–5 visits, paired with simple rehab.'
+       note: 'Need Legal Support? We document every adjustment and improvement to support your personal injury claim. We handle the paperwork for you.'
     },
     img: 'https://picsum.photos/800/400?grayscale&blur=1'
   },
   'rehab-therapy': {
     title: 'Rehab Therapy',
-    desc: 'We retrain the muscles and joints so your results last.',
+    desc: 'We retrain muscles and joints so your results last.',
+    subtitle: 'Why Rehab Matters for Claims',
+    subtitleDesc: 'Insurance adjusters look for "functional improvement." Our rehab notes prove that you are actively working to get better, which strengthens your case.',
     content: {
-        expect: ['Breathing & core control', 'Mobility + stability progressions', 'Return-to-work or sport planning'],
-        goal: 'Get you confident with a short, realistic home plan.'
+        expect: ['Mobility + stability progressions', 'Return-to-work or driving planning', 'Realistic home plan'],
+        note: 'Claim Tip: Active rehab demonstrates to insurance companies that you are committed to recovery, which can help value your claim higher.'
     },
     img: 'https://picsum.photos/800/400?grayscale&blur=1'
   },
   'dry-needling': {
-    title: 'Dry Needling',
-    desc: 'Targeted relief for stubborn knots and tension.',
+    title: 'Dry Needling (Vi Châm)',
+    desc: 'Targeted relief for stubborn knots and deep muscle tension.',
+    subtitle: 'How it helps Auto Injuries',
+    subtitleDesc: 'After a crash, muscles often lock up in deep spasms (trigger points) to protect the spine. Dry needling releases these knots instantly to restore motion.',
     content: {
-        list: ['Performed by trained clinicians', 'Often paired with rehab for longer-term results', 'Most patients feel temporary soreness for 24–48h'],
-        cta: 'Ask if it’s right for you.'
+        expect: ['Precise: We use thin, sterile filaments to target the specific muscle belly', 'Effective: Often provides immediate relief for "stiff neck" and low back tightness', 'Sensation: You may feel a "twitch" response as the muscle releases tension'],
+        note: 'Commonly combined with electrical stimulation for maximum pain relief.'
     },
     img: 'https://picsum.photos/800/400?grayscale&blur=1'
   },
   'cupping-therapy': {
       title: 'Cupping Therapy',
-      desc: 'Decompress tight tissues and improve circulation.',
+      desc: 'Decompress tight tissues and flush out inflammation.',
+      subtitle: 'Why Cupping?',
+      subtitleDesc: 'Unlike massage which "presses down," cupping "lifts up" the tissue. This decompression is excellent for increasing blood flow, breaking up scar tissue, and relieving the "heavy" sensation in the back and shoulders.',
       content: {
-          list: ['Static or gliding techniques', 'Helpful for neck, back, and shoulder tightness', 'Usually combined with mobility work']
+          list: ['Static: Cups stay in place for deep release', 'Gliding: Cups are moved along the muscles for myofascial release'],
       },
       img: 'https://picsum.photos/800/400?grayscale&blur=1'
   }
@@ -55,12 +63,19 @@ export const ServiceDetail: React.FC = () => {
            
            <h1 className="text-4xl font-display font-extrabold text-brand-navy mb-6">{data.title}</h1>
            <p className="text-xl text-brand-grey mb-8">{data.desc}</p>
-           
+
            <div className="rounded-card overflow-hidden shadow-lg mb-12 h-64 md:h-80 w-full relative">
                <img src={data.img} alt={data.title} className="w-full h-full object-cover" />
            </div>
 
            <div className="prose prose-lg max-w-none text-brand-grey">
+               {data.subtitle && (
+                   <div className="mb-8">
+                       <h2 className="text-2xl font-display font-bold text-brand-navy mb-3">{data.subtitle}</h2>
+                       <p className="text-lg">{data.subtitleDesc}</p>
+                   </div>
+               )}
+
                {data.content.expect && (
                    <>
                        <h2 className="text-2xl font-display font-bold text-brand-navy mb-4">What to expect</h2>
