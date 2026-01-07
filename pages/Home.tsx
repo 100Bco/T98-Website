@@ -7,13 +7,13 @@ import { GoogleReviews } from '../components/ui/GoogleReviews';
 import { Activity, CheckCircle, ArrowRight, ShieldCheck, AlertTriangle, DollarSign, FileText, Users } from 'lucide-react';
 
 const conditions = [
-  { title: 'Auto Injury / Whiplash', path: '/auto-injury', urgent: true },
-  { title: 'Neck & Back Pain', path: '/conditions/neck-pain' },
-  { title: 'Sciatica / Leg Pain', path: '/conditions/sciatica' },
-  { title: 'Headaches from Crash', path: '/conditions/headaches-migraines' },
-  { title: 'Shoulder Pain', path: '/conditions/shoulder-pain' },
-  { title: 'Low Back Pain', path: '/conditions/low-back-pain' },
-  { title: 'Knee Pain', path: '/conditions/knee-pain' },
+  { title: 'Auto Injury / Whiplash', path: '/auto-injury', urgent: true, image: '/Whiplash.jpg' },
+  { title: 'Neck & Back Pain', path: '/conditions/neck-pain', image: '/Neck & Back Pain.jpg' },
+  { title: 'Sciatica / Leg Pain', path: '/conditions/sciatica', image: '/Sciatica.jpg' },
+  { title: 'Headaches from Crash', path: '/conditions/headaches-migraines', image: '/Headache.jpg' },
+  { title: 'Shoulder Pain', path: '/conditions/shoulder-pain', image: '/Shoulder.jpg' },
+  { title: 'Low Back Pain', path: '/conditions/low-back-pain', image: '/Low Back.jpeg' },
+  { title: 'Knee Pain', path: '/conditions/knee-pain', image: '/Knee.jpeg' },
 ];
 
 export const Home: React.FC = () => {
@@ -143,10 +143,17 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {conditions.map((item) => (
                     <Link key={item.path} to={item.path}>
-                        <Card className={`h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue relative ${item.urgent ? 'border-brand-orange border-2' : ''}`}>
+                        <Card className={`h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue relative group ${item.urgent ? 'border-brand-orange border-2' : ''}`}>
                              {item.urgent && (
                                <span className="absolute top-2 right-2 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded">URGENT</span>
                              )}
+                             <div className="mb-4 flex justify-center">
+                               <img
+                                 src={item.image}
+                                 alt={item.title}
+                                 className="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+                               />
+                             </div>
                              <h3 className="font-display font-bold text-lg text-brand-navy">{item.title}</h3>
                              <ArrowRight className="mt-4 text-brand-orange w-5 h-5" />
                         </Card>
