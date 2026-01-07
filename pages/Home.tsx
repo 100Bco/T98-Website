@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { DuotoneIcon } from '../components/ui/DuotoneIcon';
-import { Activity, CheckCircle, ArrowRight, ShieldCheck, UserCheck, AlertTriangle, DollarSign, FileText, Users, Clock } from 'lucide-react';
+import { GoogleReviews } from '../components/ui/GoogleReviews';
+import { Activity, CheckCircle, ArrowRight, ShieldCheck, AlertTriangle, DollarSign, FileText, Users } from 'lucide-react';
 
 const conditions = [
   { title: 'Auto Injury / Whiplash', path: '/auto-injury', urgent: true },
@@ -193,39 +194,13 @@ export const Home: React.FC = () => {
       </section>
 
 
-      {/* Real Outcomes - Patient Success Stories */}
+      {/* Google Reviews Section */}
       <section className="py-20 bg-brand-navy text-white">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-display font-bold text-center mb-4">Patient Success Stories</h2>
-            <p className="text-center text-gray-300 mb-12">Real recoveries from real crashes.</p>
+            <h2 className="text-3xl font-display font-bold text-center mb-4">What Our Patients Say</h2>
+            <p className="text-center text-gray-300 mb-12">Real recoveries from real patients.</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-card border border-white/20">
-                    <h3 className="text-xl font-bold text-brand-orange mb-3">Case 1: The Rear-End Collision</h3>
-                    <div className="space-y-3 text-gray-100">
-                        <p><strong className="text-white">The Issue:</strong> Sarah couldn't turn her neck or sleep after being hit at a red light.</p>
-                        <p><strong className="text-white">The T98 Plan:</strong> Gentle mobilization and documentation for her attorney.</p>
-                        <p><strong className="text-white">The Result:</strong> Full range of motion returned in 2 weeks. Settlement approved.</p>
-                    </div>
-                    <div className="mt-6 flex items-center">
-                        <UserCheck className="w-5 h-5 text-brand-orange mr-2" />
-                        <span className="text-sm text-gray-300">Verified Patient</span>
-                    </div>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-card border border-white/20">
-                    <h3 className="text-xl font-bold text-brand-orange mb-3">Case 2: The "Hidden" Injury</h3>
-                    <div className="space-y-3 text-gray-100">
-                        <p><strong className="text-white">The Issue:</strong> Mike felt "fine" immediately after the crash but woke up with numbness in his arm 2 days later.</p>
-                        <p><strong className="text-white">The T98 Plan:</strong> Nerve decompression (dry needling) + rehab.</p>
-                        <p><strong className="text-white">The Result:</strong> Avoided long-term nerve damage.</p>
-                    </div>
-                    <div className="mt-6 flex items-center">
-                        <UserCheck className="w-5 h-5 text-brand-orange mr-2" />
-                        <span className="text-sm text-gray-300">Verified Patient</span>
-                    </div>
-                </div>
-            </div>
+            <GoogleReviews />
          </div>
       </section>
 
