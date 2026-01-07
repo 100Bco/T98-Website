@@ -29,7 +29,7 @@ export const Home: React.FC = () => {
             className="w-full h-full object-cover"
           />
           {/* Lighter Gradient Overlay - more transparent to see image better */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/70 via-brand-navy/30 to-transparent"></div>
         </div>
 
         {/* Content Overlay */}
