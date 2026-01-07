@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
                 />
              </div>
              <p className="text-gray-300 text-sm leading-relaxed">
-               We help busy people get out of pain—and stay that way with chiropractic + rehab.
+               Specializing in Auto Accident Injury & Pain Relief Rehabilitation.
              </p>
           </div>
           
