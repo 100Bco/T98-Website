@@ -19,51 +19,54 @@ const conditions = [
 export const Home: React.FC = () => {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-10 pb-16 md:pt-20 md:pb-24 lg:pt-32">
-        <div className="absolute right-0 top-0 -z-10 w-1/2 h-full bg-gradient-to-l from-brand-orange/10 to-transparent rounded-full opacity-60 blur-3xl transform translate-x-1/3"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="text-left space-y-6">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-brand-navy tracking-tightest leading-tight">
-                        Recover Faster from Auto Injuries
-                    </h1>
-                    <p className="text-xl md:text-2xl text-brand-grey leading-relaxed max-w-lg font-semibold">
-                        Same-Day Chiropractic & Rehab Care in Austin & Pflugerville
-                    </p>
-                    <p className="text-lg text-brand-grey leading-relaxed max-w-lg">
-                        Injury after a car accident isn't just pain—it's a race against time. At T98, you get quick care, insurance support, and effective recovery plans immediately.
-                    </p>
-                    <p className="text-brand-orange font-bold text-lg">
-                        Most auto injury exams cost $0 out-of-pocket.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <Link to="/auto-injury">
-                            <Button className="w-full sm:w-auto">Get Your Free Injury Consultation</Button>
-                        </Link>
-                        <Link to="/contact">
-                             <Button variant="secondary" className="w-full sm:w-auto">Book Same-Day Appointment</Button>
-                        </Link>
-                    </div>
-                </div>
-                <div className="relative">
-                    <div className="relative rounded-card overflow-hidden shadow-2xl bg-brand-mist aspect-[4/3] group">
-                         <img
-                            src="/images/hero-banner.jpg"
-                            alt="Professional care at T98 Rehab & Chiropractic"
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                    </div>
-                    {/* Decorative Circle */}
-                    <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-brand-orange rounded-full opacity-20 blur-2xl"></div>
-                </div>
+      {/* Hero Section - Full Screen */}
+      <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/hero-banner.jpg"
+            alt="Professional care at T98 Rehab & Chiropractic"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Gradient Overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/80 to-brand-navy/40"></div>
+        </div>
+
+        {/* Content Overlay */}
+        <div className="relative h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="max-w-2xl text-left text-white space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tightest leading-tight">
+                Recover Faster from Auto Injuries
+              </h1>
+              <p className="text-xl md:text-2xl leading-relaxed font-semibold text-gray-100">
+                Same-Day Chiropractic & Rehab Care in Austin & Pflugerville
+              </p>
+              <p className="text-lg leading-relaxed text-gray-200">
+                Injury after a car accident isn't just pain—it's a race against time. At T98, you get quick care, insurance support, and effective recovery plans immediately.
+              </p>
+              <p className="text-brand-orange font-bold text-xl">
+                Most auto injury exams cost $0 out-of-pocket.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link to="/auto-injury">
+                  <Button className="w-full sm:w-auto text-lg px-8 py-4">Get Your Free Injury Consultation</Button>
+                </Link>
+                <Link to="/contact">
+                  <Button variant="secondary" className="w-full sm:w-auto text-lg px-8 py-4 bg-white text-brand-navy hover:bg-gray-100">Book Same-Day Appointment</Button>
+                </Link>
+              </div>
             </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+          </div>
         </div>
       </section>
-
-      {/* Curve Divider */}
-      <div className="h-16 bg-white rounded-t-[50%] -mt-16 relative z-10 w-full scale-x-150"></div>
 
       {/* 72-Hour Rule Section */}
       <section className="py-16 bg-white">
