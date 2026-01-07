@@ -28,8 +28,8 @@ export const Home: React.FC = () => {
             alt="Professional care at T98 Rehab & Chiropractic"
             className="w-full h-full object-cover"
           />
-          {/* Gradient Overlay - only covers text area on left */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/85 via-brand-navy/30 via-35% to-transparent to-50%"></div>
+          {/* Gradient Overlay - covers exactly left 50% of screen */}
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/85 from-0% via-brand-navy/50 via-40% to-transparent to-50%"></div>
         </div>
 
         {/* Content Overlay */}
