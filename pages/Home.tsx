@@ -53,7 +53,7 @@ export const Home: React.FC = () => {
                   <Button className="w-full sm:w-auto px-6 py-3">Get Your Free Injury Consultation</Button>
                 </Link>
                 <Link to="/contact">
-                  <Button variant="secondary" className="w-full sm:w-auto px-6 py-3 bg-white text-brand-navy hover:bg-gray-100">Book Same-Day Appointment</Button>
+                  <Button variant="secondary" className="w-full sm:w-auto px-6 py-3 bg-white text-brand-navy hover:bg-gray-100 border-0">Book Same-Day Appointment</Button>
                 </Link>
               </div>
             </div>
