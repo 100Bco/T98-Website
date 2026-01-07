@@ -24,7 +24,7 @@ export const Home: React.FC = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/images/hero-banner.jpg"
+            src="/t98-hero.jpg"
             alt="Professional care at T98 Rehab & Chiropractic"
             className="w-full h-full object-cover"
           />
