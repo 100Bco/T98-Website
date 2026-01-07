@@ -140,22 +140,24 @@ export const Home: React.FC = () => {
                 <p className="text-brand-grey text-lg">Select your symptom to see how we help.</p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                 {conditions.map((item) => (
-                    <Link key={item.path} to={item.path}>
-                        <Card className={`h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue relative group ${item.urgent ? 'border-brand-orange border-2' : ''}`}>
+                    <Link key={item.path} to={item.path} className="w-full max-w-sm">
+                        <Card className={`h-full flex flex-col overflow-hidden hover:border-brand-blue relative group ${item.urgent ? 'border-brand-orange border-2' : ''}`}>
                              {item.urgent && (
-                               <span className="absolute top-2 right-2 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded">URGENT</span>
+                               <span className="absolute top-2 right-2 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded z-10">URGENT</span>
                              )}
-                             <div className="mb-4 flex justify-center">
+                             <div className="w-full h-48 overflow-hidden">
                                <img
                                  src={item.image}
                                  alt={item.title}
-                                 className="w-16 h-16 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+                                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                />
                              </div>
-                             <h3 className="font-display font-bold text-lg text-brand-navy">{item.title}</h3>
-                             <ArrowRight className="mt-4 text-brand-orange w-5 h-5" />
+                             <div className="p-6 text-center flex flex-col items-center justify-center flex-grow">
+                               <h3 className="font-display font-bold text-lg text-brand-navy mb-3">{item.title}</h3>
+                               <ArrowRight className="text-brand-orange w-5 h-5" />
+                             </div>
                         </Card>
                     </Link>
                 ))}
