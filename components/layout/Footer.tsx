@@ -7,9 +7,12 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-1">
-             <div className="flex flex-col leading-none mb-4">
-                <span className="font-display font-extrabold text-2xl text-white">T98</span>
-                <span className="font-display font-bold text-xs text-brand-orange">Rehab & Chiropractic</span>
+             <div className="mb-4">
+                <img
+                  src="/Logo T98.png"
+                  alt="T98 Rehab & Chiropractic"
+                  className="h-12 w-auto"
+                />
              </div>
              <p className="text-gray-300 text-sm leading-relaxed">
                We help busy people get out of pain—and stay that way with chiropractic + rehab.
