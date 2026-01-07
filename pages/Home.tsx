@@ -28,8 +28,8 @@ export const Home: React.FC = () => {
             alt="Professional care at T98 Rehab & Chiropractic"
             className="w-full h-full object-cover"
           />
-          {/* Lighter Gradient Overlay - more transparent to see image better */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/70 via-brand-navy/30 to-transparent"></div>
+          {/* Gradient Overlay - balanced for text readability and image visibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/85 from-0% via-brand-navy/40 via-45% to-transparent to-65%"></div>
         </div>
 
         {/* Content Overlay */}
