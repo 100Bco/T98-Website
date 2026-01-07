@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 export const MobileBottomBar: React.FC = () => {
   return (
     <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white border-t border-gray-200 shadow-lg flex h-[safe-area-inset-bottom+60px] pb-[safe-area-inset-bottom]">
-      <a 
-        href="tel:5129062580" 
+      <a
+        href="tel:5126142330"
         className="flex flex-col items-center justify-center w-[30%] bg-white text-brand-blue active:bg-gray-50 border-r border-gray-200"
       >
         <Phone className="w-5 h-5 mb-1" />

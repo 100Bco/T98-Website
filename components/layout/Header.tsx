@@ -85,11 +85,11 @@ export const Header: React.FC = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="tel:5129062580"
+              href="tel:5126142330"
               className={`flex items-center font-bold text-sm transition-colors ${textColorClass}`}
             >
                 <Phone className="w-4 h-4 mr-2" />
-                (512) 906-2580
+                (512) 614-2330
             </a>
             <Link to="/contact">
                 {/* Button đổi màu tương phản:
@@ -132,13 +132,9 @@ export const Header: React.FC = () => {
               </Link>
             ))}
             <div className="pt-6 flex flex-col space-y-4">
-                 <a href="tel:5129062580" className="flex items-center justify-center text-brand-navy font-bold py-4 bg-gray-50 rounded-xl hover:bg-gray-100">
+                 <a href="tel:5126142330" className="flex items-center justify-center text-brand-navy font-bold py-4 bg-gray-50 rounded-xl hover:bg-gray-100">
                     <Phone className="w-5 h-5 mr-2 text-brand-orange" />
-                    Call Austin: (512) 906-2580
-                </a>
-                 <a href="tel:5122521662" className="flex items-center justify-center text-brand-navy font-bold py-4 bg-gray-50 rounded-xl hover:bg-gray-100">
-                    <Phone className="w-5 h-5 mr-2 text-brand-orange" />
-                    Call Pflugerville: (512) 252-1662
+                    Call Us: (512) 614-2330
                 </a>
             </div>
           </div>

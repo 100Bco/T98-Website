@@ -134,30 +134,52 @@ export const Home: React.FC = () => {
       </section>
 
       {/* What Hurts Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">WHAT HURTS?</h2>
                 <p className="text-brand-grey text-lg">Select your symptom to see how we help.</p>
             </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-                {conditions.map((item) => (
-                    <Link key={item.path} to={item.path} className="w-full max-w-sm">
+
+            {/* First row: 4 items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
+                {conditions.slice(0, 4).map((item) => (
+                    <Link key={item.path} to={item.path}>
                         <Card className={`h-full flex flex-col overflow-hidden hover:border-brand-blue relative group ${item.urgent ? 'border-brand-orange border-2' : ''}`}>
                              {item.urgent && (
                                <span className="absolute top-2 right-2 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded z-10">URGENT</span>
                              )}
-                             <div className="w-full h-48 overflow-hidden">
+                             <div className="w-full h-36 overflow-hidden">
                                <img
                                  src={item.image}
                                  alt={item.title}
                                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                />
                              </div>
-                             <div className="p-6 text-center flex flex-col items-center justify-center flex-grow">
-                               <h3 className="font-display font-bold text-lg text-brand-navy mb-3">{item.title}</h3>
-                               <ArrowRight className="text-brand-orange w-5 h-5" />
+                             <div className="p-4 text-center flex flex-col items-center justify-center flex-grow">
+                               <h3 className="font-display font-bold text-base text-brand-navy mb-2">{item.title}</h3>
+                               <ArrowRight className="text-brand-orange w-4 h-4" />
+                             </div>
+                        </Card>
+                    </Link>
+                ))}
+            </div>
+
+            {/* Second row: 3 items centered */}
+            <div className="flex flex-wrap justify-center gap-4">
+                {conditions.slice(4).map((item) => (
+                    <Link key={item.path} to={item.path} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.67rem)] lg:w-[calc(25%-0.75rem)]">
+                        <Card className="h-full flex flex-col overflow-hidden hover:border-brand-blue relative group">
+                             <div className="w-full h-36 overflow-hidden">
+                               <img
+                                 src={item.image}
+                                 alt={item.title}
+                                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                               />
+                             </div>
+                             <div className="p-4 text-center flex flex-col items-center justify-center flex-grow">
+                               <h3 className="font-display font-bold text-base text-brand-navy mb-2">{item.title}</h3>
+                               <ArrowRight className="text-brand-orange w-4 h-4" />
                              </div>
                         </Card>
                     </Link>
@@ -221,27 +243,47 @@ export const Home: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">Locations</h2>
-            <p className="text-brand-grey text-lg">Austin (North) • Pflugerville</p>
-            <p className="text-brand-grey">Open late & Saturdays to fit your schedule.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">Our Locations</h2>
+            <p className="text-brand-grey text-lg">Austin • Pflugerville</p>
+            <p className="text-brand-orange font-bold">Call: (512) 614-2330</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="text-center">
-              <h3 className="text-xl font-display font-bold text-brand-navy mb-3">Austin (North)</h3>
-              <p className="text-brand-grey mb-2">(512) 906-2580</p>
-              <p className="text-brand-grey text-sm mb-4">123 Sample Rd, Austin, TX</p>
+              <h3 className="text-xl font-display font-bold text-brand-navy mb-3">Austin</h3>
+              <p className="text-brand-grey text-sm mb-2">1139 Braker Lane #101<br/>Austin, TX 78758</p>
+              <p className="text-brand-grey text-xs mb-4">
+                Mon, Wed, Fri: 8:30am – 1:00pm | 3:00pm - 6:30pm<br/>
+                Tue, Thu, Sat, Sun: Closed
+              </p>
+              <iframe
+                title="Austin Map"
+                className="w-full h-48 rounded-lg border-0 mb-4"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.8447359595384!2d-97.71947!3d30.3873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644cb5c8b5e5e5f%3A0x0!2s1139%20Braker%20Ln%20%23101%2C%20Austin%2C%20TX%2078758!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
               <Link to="/contact">
-                <Button variant="secondary" className="w-full">Call / Book Online</Button>
+                <Button variant="secondary" className="w-full">Book Appointment</Button>
               </Link>
             </Card>
 
             <Card className="text-center">
               <h3 className="text-xl font-display font-bold text-brand-navy mb-3">Pflugerville</h3>
-              <p className="text-brand-grey mb-2">(512) 252-1662</p>
-              <p className="text-brand-grey text-sm mb-4">456 Sample Ave, Pflugerville, TX</p>
+              <p className="text-brand-grey text-sm mb-2">201 N. Heatherwilde Blvd. #104<br/>Pflugerville, TX 78660</p>
+              <p className="text-brand-grey text-xs mb-4">
+                Tue, Thu: 8:30am – 1:00pm | 3:00pm – 6:30pm<br/>
+                Mon, Wed, Fri, Sat, Sun: Closed
+              </p>
+              <iframe
+                title="Pflugerville Map"
+                className="w-full h-48 rounded-lg border-0 mb-4"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.5789!2d-97.6154!3d30.4511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644cb5c8b5e5e5f%3A0x0!2s201%20N%20Heatherwilde%20Blvd%20%23104%2C%20Pflugerville%2C%20TX%2078660!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
               <Link to="/contact">
-                <Button variant="secondary" className="w-full">Call / Book Online</Button>
+                <Button variant="secondary" className="w-full">Book Appointment</Button>
               </Link>
             </Card>
           </div>
