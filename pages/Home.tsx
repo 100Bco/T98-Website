@@ -48,12 +48,16 @@ export const Home: React.FC = () => {
               <p className="text-brand-orange font-bold text-lg">
                 Most auto injury exams cost $0 out-of-pocket.
               </p>
+            <p className="text-brand-orange font-bold text-lg">
+                Most auto injury exams cost $0 out-of-pocket.
+              </p>
+              
+              {/* Phần code đã sửa button */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link to="/auto-injury">
-                  <Button className="w-full sm:w-auto px-6 py-3">Get Your Free Injury Consultation</Button>
-                </Link>
                 <Link to="/contact">
-                  <Button variant="secondary" className="w-full sm:w-auto px-6 py-3 bg-white text-brand-navy hover:bg-gray-100 border-0">Book Same-Day Appointment</Button>
+                  <Button className="w-full sm:w-auto px-6 py-3 bg-brand-orange text-white hover:brightness-110 border-0">
+                    Schedule Appointment
+                  </Button>
                 </Link>
               </div>
             </div>
