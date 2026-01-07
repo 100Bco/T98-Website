@@ -255,8 +255,15 @@ export const Home: React.FC = () => {
                 Mon, Wed, Fri: 8:30am – 1:00pm | 3:00pm - 6:30pm<br/>
                 Tue, Thu, Sat, Sun: Closed
               </p>
+              <iframe
+                title="Austin Map"
+                className="w-full h-48 rounded-lg border-0 mb-4"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.8447359595384!2d-97.71947!3d30.3873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644cb5c8b5e5e5f%3A0x0!2s1139%20Braker%20Ln%20%23101%2C%20Austin%2C%20TX%2078758!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
               <Link to="/contact">
-                <Button variant="secondary" className="w-full">View Map & Book</Button>
+                <Button variant="secondary" className="w-full">Book Appointment</Button>
               </Link>
             </Card>
 
@@ -267,8 +274,15 @@ export const Home: React.FC = () => {
                 Tue, Thu: 8:30am – 1:00pm | 3:00pm – 6:30pm<br/>
                 Mon, Wed, Fri, Sat, Sun: Closed
               </p>
+              <iframe
+                title="Pflugerville Map"
+                className="w-full h-48 rounded-lg border-0 mb-4"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.5789!2d-97.6154!3d30.4511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644cb5c8b5e5e5f%3A0x0!2s201%20N%20Heatherwilde%20Blvd%20%23104%2C%20Pflugerville%2C%20TX%2078660!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
               <Link to="/contact">
-                <Button variant="secondary" className="w-full">View Map & Book</Button>
+                <Button variant="secondary" className="w-full">Book Appointment</Button>
               </Link>
             </Card>
           </div>
