@@ -45,9 +45,6 @@ export const Home: React.FC = () => {
               <p className="text-base leading-relaxed text-gray-200">
                 Injury after a car accident isn't just pain—it's a race against time. At T98, you get quick care, insurance support, and effective recovery plans immediately.
               </p>
-              <p className="text-brand-orange font-bold text-lg">
-                Most auto injury exams cost $0 out-of-pocket.
-              </p>
             <p className="text-brand-orange font-bold text-lg">
                 Most auto injury exams cost $0 out-of-pocket.
               </p>
