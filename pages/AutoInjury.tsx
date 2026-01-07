@@ -16,10 +16,10 @@ export const AutoInjury: React.FC = () => {
                     Auto Injury Care
                 </div>
                 <h1 className="text-4xl md:text-5xl font-display font-extrabold mb-6 leading-tight">
-                    Auto Injury Chiropractic — Same-Day Appointments
+                    Auto Injury Chiropractic — We Handle The Stress
                 </h1>
                 <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                    Neck or back pain after a crash? We’ll assess you, start relief, and handle the paperwork.
+                    Neck or back pain after a crash? The clock is ticking on your health and your claim. We assess your injuries, start relief immediately, and provide the documentation your attorney needs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                      <a href="tel:5129062580">
@@ -49,23 +49,23 @@ export const AutoInjury: React.FC = () => {
         </div>
       </section>
 
-      {/* Steps */}
+      {/* 4 Steps to Protect Your Health & Claim */}
       <section className="py-20">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-display font-bold text-brand-navy mb-12 text-center">What to do after a crash</h2>
+            <h2 className="text-3xl font-display font-bold text-brand-navy mb-12 text-center">4 Steps to Protect Your Health & Claim</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                    { title: "1. Get checked", desc: "Symptoms can appear hours to days later.", icon: Clock },
-                    { title: "2. Document everything", desc: "Photos, police report, pain timeline.", icon: FileText },
-                    { title: "3. Start care early", desc: "Gentle treatment protects your recovery.", icon: Shield },
-                    { title: "4. Claims help", desc: "We provide notes, ROM measures, & progress records.", icon: CheckCircle },
+                    { title: "1. Get Checked Immediately", desc: "Gaps in treatment can hurt your settlement value.", icon: Clock },
+                    { title: "2. Detailed Documentation", desc: "We record every symptom, ROM loss, and functional deficit.", icon: FileText },
+                    { title: "3. No Out-of-Pocket Costs", desc: "We accept Letters of Protection (LOP), PIP, and MedPay.", icon: Shield },
+                    { title: "4. Active Recovery", desc: "Passive care + Rehab exercises to prevent long-term stiffness.", icon: CheckCircle },
                 ].map((step, idx) => (
                     <Card key={idx} className="border-t-4 border-t-brand-orange relative">
                         <div className="absolute -top-6 left-6 bg-brand-navy text-white w-10 h-10 rounded-full flex items-center justify-center font-bold font-display shadow-lg">
                             {idx + 1}
                         </div>
                         <div className="pt-6">
-                            <h3 className="font-bold text-brand-navy text-xl mb-2">{step.title}</h3>
+                            <h3 className="font-bold text-brand-navy text-lg mb-2">{step.title}</h3>
                             <p className="text-brand-grey text-sm">{step.desc}</p>
                         </div>
                     </Card>
@@ -131,23 +131,54 @@ export const AutoInjury: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Why Attorneys Trust T98 */}
       <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-display font-bold text-brand-navy mb-12 text-center">Why Attorneys Trust T98</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                  <Card>
+                      <FileText className="w-10 h-10 text-brand-orange mb-4" />
+                      <h3 className="font-bold text-brand-navy text-xl mb-3">Detailed Narratives</h3>
+                      <p className="text-brand-grey">Comprehensive reports proving the extent of injury.</p>
+                  </Card>
+                  <Card>
+                      <CheckCircle className="w-10 h-10 text-brand-orange mb-4" />
+                      <h3 className="font-bold text-brand-navy text-xl mb-3">Court-Ready Records</h3>
+                      <p className="text-brand-grey">Organized, timely, and compliant notes.</p>
+                  </Card>
+                  <Card>
+                      <Shield className="w-10 h-10 text-brand-orange mb-4" />
+                      <h3 className="font-bold text-brand-navy text-xl mb-3">Network of Specialists</h3>
+                      <p className="text-brand-grey">Fast referrals for MRI or Orthopedics if needed.</p>
+                  </Card>
+              </div>
+              <div className="mt-12 text-center">
+                  <p className="text-brand-navy font-bold text-lg mb-6">Don't delay. Texas law has strict timelines for injury claims.</p>
+                  <Link to="/contact">
+                      <Button>Book Your Accident Exam Now</Button>
+                  </Link>
+              </div>
+          </div>
+      </section>
+
+      {/* Auto Injury FAQs */}
+      <section className="py-20 bg-brand-mist">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-display font-bold text-brand-navy mb-8 text-center">FAQs</h2>
+              <h2 className="text-3xl font-display font-bold text-brand-navy mb-4 text-center">Auto Injury FAQs</h2>
+              <p className="text-center text-brand-grey mb-12">Common questions about Claims & Care</p>
               <div className="space-y-6">
-                  <div className="border-b border-gray-100 pb-4">
-                      <h4 className="font-bold text-brand-navy mb-2">Do I need a referral?</h4>
-                      <p className="text-brand-grey">Usually no.</p>
-                  </div>
-                  <div className="border-b border-gray-100 pb-4">
-                      <h4 className="font-bold text-brand-navy mb-2">Do you work with attorneys?</h4>
-                      <p className="text-brand-grey">Yes—daily.</p>
-                  </div>
-                  <div className="border-b border-gray-100 pb-4">
-                      <h4 className="font-bold text-brand-navy mb-2">Will insurance cover it?</h4>
-                      <p className="text-brand-grey">We’ll verify benefits and explain options.</p>
-                  </div>
+                  <Card>
+                      <h4 className="font-bold text-brand-navy mb-3 text-lg">Q: How does PIP insurance work for chiropractic?</h4>
+                      <p className="text-brand-grey"><strong>A:</strong> Personal Injury Protection (PIP) is coverage you likely already pay for on your auto policy. It covers medical bills 100% up to your limit, regardless of who was at fault. We handle the billing directly.</p>
+                  </Card>
+                  <Card>
+                      <h4 className="font-bold text-brand-navy mb-3 text-lg">Q: What documentation do I need for my claim?</h4>
+                      <p className="text-brand-grey"><strong>A:</strong> You need proof of injury severity and functional loss. We provide initial exam reports, daily SOAP notes, and narrative reports that attorneys use to negotiate your settlement.</p>
+                  </Card>
+                  <Card>
+                      <h4 className="font-bold text-brand-navy mb-3 text-lg">Q: How long should I wait to see a doctor?</h4>
+                      <p className="text-brand-grey"><strong>A:</strong> Do not wait. Texas law and insurance adjusters look for "gaps in care." Seeing a doctor within 72 hours is critical for linking your injury to the accident.</p>
+                  </Card>
               </div>
           </div>
       </section>

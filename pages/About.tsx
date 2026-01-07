@@ -9,15 +9,20 @@ export const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-display font-extrabold text-brand-navy mb-4">About T98</h1>
-            <p className="text-xl text-brand-grey">We help busy people get out of pain—and stay that way.</p>
+            <p className="text-xl text-brand-grey">We help busy people and accident victims get out of pain.</p>
          </div>
 
          <div className="mb-20">
-             <h2 className="text-2xl font-display font-bold text-brand-navy mb-6">Our Approach</h2>
+             <h2 className="text-2xl font-display font-bold text-brand-navy mb-6">Why T98?</h2>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                 {['3R Method: Recover → Reactivate → Results', 'Evidence-based, patient-first', 'Plans that fit real life'].map((item, i) => (
+                 {[
+                   {title: 'Auto Injury Specialists', desc: 'Deep experience with PI cases and attorney documentation.'},
+                   {title: 'Multilingual Care', desc: 'We speak English, Vietnamese, and Spanish.'},
+                   {title: 'Real Life Plans', desc: 'We don\'t demand 3x/week forever. We treat to release.'}
+                 ].map((item, i) => (
                      <Card key={i} className="bg-brand-mist border-0">
-                         <p className="font-bold text-brand-navy text-lg">{item}</p>
+                         <h3 className="font-bold text-brand-navy text-lg mb-2">{item.title}</h3>
+                         <p className="text-brand-grey">{item.desc}</p>
                      </Card>
                  ))}
              </div>

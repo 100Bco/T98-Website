@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { DuotoneIcon } from '../components/ui/DuotoneIcon';
-import { Activity, Zap, CheckCircle, ArrowRight, ShieldCheck, UserCheck } from 'lucide-react';
+import { Activity, CheckCircle, ArrowRight, ShieldCheck, UserCheck, AlertTriangle, DollarSign, FileText, Users, Clock } from 'lucide-react';
 
 const conditions = [
-  { title: 'Low Back Pain', path: '/conditions/low-back-pain' },
-  { title: 'Neck Pain', path: '/conditions/neck-pain' },
-  { title: 'Sciatica', path: '/conditions/sciatica' },
-  { title: 'Whiplash / Auto Injury', path: '/auto-injury' },
+  { title: 'Auto Injury / Whiplash', path: '/auto-injury', urgent: true },
+  { title: 'Neck & Back Pain', path: '/conditions/neck-pain' },
+  { title: 'Sciatica / Leg Pain', path: '/conditions/sciatica' },
+  { title: 'Headaches from Crash', path: '/conditions/headaches-migraines' },
   { title: 'Shoulder Pain', path: '/conditions/shoulder-pain' },
+  { title: 'Low Back Pain', path: '/conditions/low-back-pain' },
   { title: 'Knee Pain', path: '/conditions/knee-pain' },
-  { title: 'Headaches & Migraines', path: '/conditions/headaches-migraines' },
 ];
 
 export const Home: React.FC = () => {
@@ -26,23 +26,25 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="text-left space-y-6">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-brand-navy tracking-tightest leading-tight">
-                        Chiropractor & Rehab in Austin and Pflugerville
+                        Recover Faster from Auto Injuries
                     </h1>
-                    <p className="text-lg md:text-xl text-brand-grey leading-relaxed max-w-lg">
-                        <strong>Pain relief that lasts—without the runaround.</strong>
+                    <p className="text-xl md:text-2xl text-brand-grey leading-relaxed max-w-lg font-semibold">
+                        Same-Day Chiropractic & Rehab Care in Austin & Pflugerville
+                    </p>
+                    <p className="text-lg text-brand-grey leading-relaxed max-w-lg">
+                        Injury after a car accident isn't just pain—it's a race against time. At T98, you get quick care, insurance support, and effective recovery plans immediately.
+                    </p>
+                    <p className="text-brand-orange font-bold text-lg">
+                        Most auto injury exams cost $0 out-of-pocket.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <Link to="/contact">
-                            <Button className="w-full sm:w-auto">Book Now</Button>
-                        </Link>
                         <Link to="/auto-injury">
-                             <Button variant="secondary" className="w-full sm:w-auto">Free Injury Consult</Button>
+                            <Button className="w-full sm:w-auto">Get Your Free Injury Consultation</Button>
+                        </Link>
+                        <Link to="/contact">
+                             <Button variant="secondary" className="w-full sm:w-auto">Book Same-Day Appointment</Button>
                         </Link>
                     </div>
-                    <p className="text-sm text-brand-grey pt-2 flex items-center">
-                        <span className="w-2 h-2 bg-brand-green rounded-full mr-2"></span>
-                        Accepting New Patients & Auto Injury Cases
-                    </p>
                 </div>
                 <div className="relative">
                     <div className="relative rounded-card overflow-hidden shadow-2xl bg-brand-mist aspect-[4/3] group">
@@ -62,6 +64,70 @@ export const Home: React.FC = () => {
       {/* Curve Divider */}
       <div className="h-16 bg-white rounded-t-[50%] -mt-16 relative z-10 w-full scale-x-150"></div>
 
+      {/* 72-Hour Rule Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-lg">
+            <div className="flex items-start">
+              <AlertTriangle className="w-8 h-8 text-red-500 mr-4 flex-shrink-0 mt-1" />
+              <div>
+                <h2 className="text-2xl font-display font-bold text-brand-navy mb-3">⚠️ The 72-Hour Rule</h2>
+                <p className="text-brand-grey text-lg mb-4">
+                  <strong>Don't Wait.</strong> Insurance companies often deny or reduce claims if you wait too long to see a doctor. Symptoms like whiplash can take 48-72 hours to appear.
+                </p>
+                <p className="text-brand-navy font-semibold text-lg">
+                  Protect your health and your settlement—get checked today.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose T98 Section */}
+      <section className="py-20 bg-brand-mist">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">Why Choose T98?</h2>
+            <p className="text-brand-orange text-xl font-bold">#1 Auto Injury Chiropractor – Trusted by Attorneys & Patients</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="text-center">
+              <div className="mb-4 flex justify-center">
+                <DuotoneIcon icon={DollarSign} size={40} />
+              </div>
+              <h3 className="font-display font-bold text-lg text-brand-navy mb-2">$0 Out-of-Pocket Options</h3>
+              <p className="text-brand-grey">We accept LOPs (Letters of Protection), PIP, and MedPay.</p>
+            </Card>
+
+            <Card className="text-center">
+              <div className="mb-4 flex justify-center">
+                <DuotoneIcon icon={FileText} size={40} />
+              </div>
+              <h3 className="font-display font-bold text-lg text-brand-navy mb-2">Claims Assistance</h3>
+              <p className="text-brand-grey">We handle the paperwork so you don't have to.</p>
+            </Card>
+
+            <Card className="text-center">
+              <div className="mb-4 flex justify-center">
+                <DuotoneIcon icon={Users} size={40} />
+              </div>
+              <h3 className="font-display font-bold text-lg text-brand-navy mb-2">Bilingual Team</h3>
+              <p className="text-brand-grey">We speak Vietnamese, Spanish, and English.</p>
+            </Card>
+
+            <Card className="text-center">
+              <div className="mb-4 flex justify-center">
+                <DuotoneIcon icon={Activity} size={40} />
+              </div>
+              <h3 className="font-display font-bold text-lg text-brand-navy mb-2">Chiropractic + Rehab</h3>
+              <p className="text-brand-grey">Comprehensive care to restore function, not just cover up pain.</p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* What Hurts Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,9 +139,12 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {conditions.map((item) => (
                     <Link key={item.path} to={item.path}>
-                        <Card className="h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue">
+                        <Card className={`h-full flex flex-col items-center justify-center text-center p-6 hover:border-brand-blue relative ${item.urgent ? 'border-brand-orange border-2' : ''}`}>
+                             {item.urgent && (
+                               <span className="absolute top-2 right-2 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded">URGENT</span>
+                             )}
                              <h3 className="font-display font-bold text-lg text-brand-navy">{item.title}</h3>
-                             <ArrowRight className="mt-4 text-brand-orange w-5 h-5 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all" />
+                             <ArrowRight className="mt-4 text-brand-orange w-5 h-5" />
                         </Card>
                     </Link>
                 ))}
@@ -123,63 +192,72 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Choose T98 */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                     <img 
-                        src="https://picsum.photos/800/800" 
-                        alt="Clinic interior" 
-                        className="rounded-card shadow-lg object-cover w-full h-96"
-                    />
-                </div>
-                <div>
-                    <h2 className="text-3xl font-display font-bold text-brand-navy mb-6">Why patients choose T98</h2>
-                    <ul className="space-y-4">
-                        {[
-                            'Same-day and after-work appointments',
-                            'Chiropractors + rehab in one place',
-                            'Clear plan, no pressure',
-                            'Documentation your attorney and insurance can use (auto injuries)'
-                        ].map((item, i) => (
-                            <li key={i} className="flex items-start">
-                                <CheckCircle className="text-brand-green w-6 h-6 mr-3 flex-shrink-0 mt-0.5" />
-                                <span className="text-brand-grey text-lg">{item}</span>
-                            </li>
-                        ))}
-                    </ul>
-                    
-                    <div className="mt-10">
-                        <Link to="/contact">
-                            <Button>Book an Appointment</Button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
 
-      {/* Real Outcomes */}
+      {/* Real Outcomes - Patient Success Stories */}
       <section className="py-20 bg-brand-navy text-white">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-display font-bold text-center mb-12">Real outcomes</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                    "I could sit through work again after 3 visits.",
-                    "My neck rotation came back within two weeks.",
-                    "They handled the claim paperwork—huge relief."
-                ].map((quote, i) => (
-                    <div key={i} className="bg-white/10 backdrop-blur-sm p-8 rounded-card border border-white/20">
-                        <p className="text-lg italic font-medium">“{quote}”</p>
-                        <div className="mt-4 flex items-center">
-                            <UserCheck className="w-5 h-5 text-brand-orange mr-2" />
-                            <span className="text-sm text-gray-300">Verified Patient</span>
-                        </div>
+            <h2 className="text-3xl font-display font-bold text-center mb-4">Patient Success Stories</h2>
+            <p className="text-center text-gray-300 mb-12">Real recoveries from real crashes.</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-card border border-white/20">
+                    <h3 className="text-xl font-bold text-brand-orange mb-3">Case 1: The Rear-End Collision</h3>
+                    <div className="space-y-3 text-gray-100">
+                        <p><strong className="text-white">The Issue:</strong> Sarah couldn't turn her neck or sleep after being hit at a red light.</p>
+                        <p><strong className="text-white">The T98 Plan:</strong> Gentle mobilization and documentation for her attorney.</p>
+                        <p><strong className="text-white">The Result:</strong> Full range of motion returned in 2 weeks. Settlement approved.</p>
                     </div>
-                ))}
+                    <div className="mt-6 flex items-center">
+                        <UserCheck className="w-5 h-5 text-brand-orange mr-2" />
+                        <span className="text-sm text-gray-300">Verified Patient</span>
+                    </div>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-card border border-white/20">
+                    <h3 className="text-xl font-bold text-brand-orange mb-3">Case 2: The "Hidden" Injury</h3>
+                    <div className="space-y-3 text-gray-100">
+                        <p><strong className="text-white">The Issue:</strong> Mike felt "fine" immediately after the crash but woke up with numbness in his arm 2 days later.</p>
+                        <p><strong className="text-white">The T98 Plan:</strong> Nerve decompression (dry needling) + rehab.</p>
+                        <p><strong className="text-white">The Result:</strong> Avoided long-term nerve damage.</p>
+                    </div>
+                    <div className="mt-6 flex items-center">
+                        <UserCheck className="w-5 h-5 text-brand-orange mr-2" />
+                        <span className="text-sm text-gray-300">Verified Patient</span>
+                    </div>
+                </div>
             </div>
          </div>
+      </section>
+
+      {/* Locations Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-navy mb-4">Locations</h2>
+            <p className="text-brand-grey text-lg">Austin (North) • Pflugerville</p>
+            <p className="text-brand-grey">Open late & Saturdays to fit your schedule.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="text-center">
+              <h3 className="text-xl font-display font-bold text-brand-navy mb-3">Austin (North)</h3>
+              <p className="text-brand-grey mb-2">(512) 906-2580</p>
+              <p className="text-brand-grey text-sm mb-4">123 Sample Rd, Austin, TX</p>
+              <Link to="/contact">
+                <Button variant="secondary" className="w-full">Call / Book Online</Button>
+              </Link>
+            </Card>
+
+            <Card className="text-center">
+              <h3 className="text-xl font-display font-bold text-brand-navy mb-3">Pflugerville</h3>
+              <p className="text-brand-grey mb-2">(512) 252-1662</p>
+              <p className="text-brand-grey text-sm mb-4">456 Sample Ave, Pflugerville, TX</p>
+              <Link to="/contact">
+                <Button variant="secondary" className="w-full">Call / Book Online</Button>
+              </Link>
+            </Card>
+          </div>
+        </div>
       </section>
     </>
   );

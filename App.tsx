@@ -5,6 +5,7 @@ import { Footer } from './components/layout/Footer';
 import { MobileBottomBar } from './components/layout/MobileBottomBar';
 import { Home } from './pages/Home';
 import { AutoInjury } from './pages/AutoInjury';
+import { ClaimsSupport } from './pages/ClaimsSupport';
 import { Services } from './pages/Services';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { Conditions } from './pages/Conditions';
@@ -31,6 +32,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/auto-injury" element={<AutoInjury />} />
+            <Route path="/claims-support" element={<ClaimsSupport />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/conditions" element={<Conditions />} />
