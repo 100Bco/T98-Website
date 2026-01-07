@@ -28,32 +28,32 @@ export const Home: React.FC = () => {
             alt="Professional care at T98 Rehab & Chiropractic"
             className="w-full h-full object-cover"
           />
-          {/* Dark Gradient Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/80 to-brand-navy/40"></div>
+          {/* Lighter Gradient Overlay - more transparent to see image better */}
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 to-transparent"></div>
         </div>
 
         {/* Content Overlay */}
         <div className="relative h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="max-w-2xl text-left text-white space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tightest leading-tight">
+            <div className="max-w-xl text-left text-white space-y-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold tracking-tightest leading-tight">
                 Recover Faster from Auto Injuries
               </h1>
-              <p className="text-xl md:text-2xl leading-relaxed font-semibold text-gray-100">
+              <p className="text-lg md:text-xl leading-relaxed font-semibold text-gray-100">
                 Same-Day Chiropractic & Rehab Care in Austin & Pflugerville
               </p>
-              <p className="text-lg leading-relaxed text-gray-200">
+              <p className="text-base leading-relaxed text-gray-200">
                 Injury after a car accident isn't just pain—it's a race against time. At T98, you get quick care, insurance support, and effective recovery plans immediately.
               </p>
-              <p className="text-brand-orange font-bold text-xl">
+              <p className="text-brand-orange font-bold text-lg">
                 Most auto injury exams cost $0 out-of-pocket.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Link to="/auto-injury">
-                  <Button className="w-full sm:w-auto text-lg px-8 py-4">Get Your Free Injury Consultation</Button>
+                  <Button className="w-full sm:w-auto px-6 py-3">Get Your Free Injury Consultation</Button>
                 </Link>
                 <Link to="/contact">
-                  <Button variant="secondary" className="w-full sm:w-auto text-lg px-8 py-4 bg-white text-brand-navy hover:bg-gray-100">Book Same-Day Appointment</Button>
+                  <Button variant="secondary" className="w-full sm:w-auto px-6 py-3 bg-white text-brand-navy hover:bg-gray-100">Book Same-Day Appointment</Button>
                 </Link>
               </div>
             </div>
